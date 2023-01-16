@@ -1,46 +1,41 @@
 public class VariablesTheme {
     public static void main(String[] args) {
+        System.out.println("\n\nЗадание 1. Вывод значений переменных на консоль\n");
 
-        System.out.println("\n\nЗадание 1\n");
-
-        // TODO Problem 1
         byte op = 8;
-        short video = 1536;
+        short videocard = 1536;
         int processor = 2600;
         long hard = 262_144L;
-        float monitor = 13.3f;
+        float monitor_inch = 13.3f;
         double mind = 101.8432;
-        char symbol = 120;
+        char os_x = 120;
         boolean happening = true;
 
         System.out.println("1" + "." + " " + "Вывод значений переменных на консоль");
         System.out.println(op + " " + "Gb" + " " + "-" + " " + "Оперативная память");
-        System.out.println(video + " " + "MHz" + " " + "-" + " " + "Видеокарта");
+        System.out.println(videocard + " " + "MHz" + " " + "-" + " " + "Видеокарта");
         System.out.println(processor + " " + "MHz" + " " + "-" + " " + "Процессор");
         System.out.println(hard + " " + "Mb" + " " + "-" + " " + "Жесткий диск");
-        System.out.println(monitor + " " + "inch" + " " + "-" + " " + "Монитор");
+        System.out.println(monitor_inch + " " + "inch" + " " + "-" + " " + "Монитор");
         System.out.println(mind + " " + "Gb" + " " + "-" + " " + "Свободной памяти");
-        System.out.println(symbol + " " + "OS Операционная система");
+        System.out.println(os_x + " " + "OS Операционная система");
         System.out.println("Ноутбук работает" + " " + "-" + " " + "it's" + " " + happening + "!");
 
-        // end problem 1
 
-        System.out.println("\n\nЗадание 2\n");
+        System.out.println("\n\nЗадание 2. Расчет стоимости товара со скидкой\n");
 
-        //TODO Problem 2
-        int book = 200; //book's cost
-        int pen = 100; // pen's cost
-        int sale = 11; // sale in %
+        int book_cost = 200; //book's cost
+        int pen_cost = 100; // pen's cost
+        int sale_procent = 11; // sale in %
+        int sum_prod = book_cost + pen_cost;
+        int sum_sale = sum_prod * sale_procent / 100;
 
-        System.out.println("2" + "." + " " + "Расчет стоимости товара со скидкой");
-        System.out.println("Сумма скидки" + " " + (book + pen) * sale / 100 + " " + "руб.");
-        System.out.println("Стоимость товаров со скидкой" + " " + ((book + pen)-((book +pen) * sale
-                / 100)) + " " + "руб.");
-        // end Problem 2
+        System.out.println("Сумма скидки" + " " + sum_sale  + " " + "руб.");
+        System.out.println("Стоимость товаров со скидкой" + " " + (sum_prod - sum_sale) + " " +
+                "руб.");
 
-        System.out.println("\n\nЗадание 3 \n");
+        System.out.println("\n\nЗадание 3. Вывод слова JAVA \n");
 
-        //TODO Problem 3
         char a = 97;
         char J = 74;
         char V = 86;
@@ -54,97 +49,79 @@ public class VariablesTheme {
                 V + " " + " " + a + a + a + a + a);
         System.out.println(" " + J + J + " " + " " + a + " " + " " + " " + " " + " " + a + " " + " "
                 + V + " " + " " + a + " " + " " + " " + " " + " " + a);
-        // end Problem 3
 
-        System.out.println("\n\nЗадание 4\n");
+        System.out.println("\n\nЗадание 4. Вывод min и max значений целых числовых типов\n");
 
-        //TODO Problem 4
         byte byteMax = 127, byteMin = -128;
+        byte byteMaxIn = byteMax++;
+        byte byteMinIn = byteMin++;
+        byte byteMaxDec = byteMax--;
+        byte byteMinDec = byteMin--;
         short shortMax = 32_767, shortMin = -32_768;
+        short shortMaxIn = shortMax++;
+        short shortMinIn = shortMin++;
+        short shortMaxDec = shortMax--;
+        short shortMinDec = shortMin--;
         int intMax = 2_147_483_647, intMin = -2_147_483_647;
+        int intMaxIn = intMax++;
+        int intMinIn = intMin++;
+        int intMaxDec = intMax--;
+        int intMinDec = intMin--;
         long longMax = 9_223_372_036_854_775_807L, longMin = -9_223_372_036_854_775_808L;
+        long longMaxIn = longMax++;
+        long longMinIn = longMin++;
+        long longMaxDec = longMax--;
+        long longMinDec = longMin--;
 
-        System.out.println("Максимальное значение byte" + " " + byteMax + " " +
-                "Миниальное значение byte " + byteMin);
 
-        byteMax ++;
-        byteMin ++;
+        System.out.println("Максимальное значение byte" + " " + byteMax + " " + 
+                "Минимальное значение byte " + byteMin + "\nИнкремент byte" + " " + byteMaxIn + " " 
+                + byteMinIn  + "\nДекремент byte" + " " + byteMaxDec + " " + byteMinDec);
 
-        System.out.println("Инкремент byte" + " " + byteMax + " " + byteMin);
 
-        byteMax --;
-        byteMin --;
 
-        System.out.println("Декремент byte" + " " + byteMax + " " + byteMin);
+        System.out.println("\nМаксимальное значение short" + " " + shortMax + " " + 
+                "Минимальное значение short " + shortMin  + "\nИнкремент short" + " " + shortMaxIn 
+                + " " + shortMinIn + "\nДекремент short" + " " + shortMaxDec + " " + shortMinDec);
 
-        System.out.println("Максимальное значение short" + " " + shortMax + " " +
-                "Миниальное значение short " +
-                shortMin);
 
-        shortMax ++;
-        shortMin ++;
+        System.out.println("\nМаксимальное значение int" + " " + intMax + " " +
+                "Минимальное значение int " + intMin + "\nИнкремент int" + " " + intMaxIn + " " + 
+                intMinIn + "\nДекремент int" + " " + intMaxDec + " " + intMinDec);
 
-        System.out.println("Инкремент short" + " " + shortMax + " " + shortMin);
 
-        shortMax --;
-        shortMin --;
+        System.out.println("\nМаксимальное значение long" + " " + longMax + " " + 
+                "Минимальное значение long" + longMin + "\nИнкремент long" + " " + longMaxIn + " " 
+                + longMinIn + "\nДекремент long" + " " + longMaxDec + " " + longMinDec);
 
-        System.out.println("Декремент short" + " " + shortMax + " " + shortMin);
 
-        System.out.println("Максимальное значение int" + " " + intMax + " " +
-                "Миниальное значение int " + intMin);
 
-        intMax ++;
-        intMin ++;
-
-        System.out.println("Инкремент int" + " " + intMax + " " + intMin);
-
-        intMax --;
-        intMin --;
-
-        System.out.println("Декремент int" + " " + intMax + " " + intMin);
-
-        System.out.println("Максимальное значение long" + " " + byteMax + " " +
-                "Миниальное значение long" + byteMin);
-
-        longMax ++;
-        longMin ++;
-
-        System.out.println("Инкремент long" + " " + longMax + " " + longMin);
-
-        longMax --;
-        longMin --;
-
-        System.out.println("Декремент long" + " " + longMax + " " + longMin);
-
-        // end Problem 4
-
-        System.out.println("\n\nЗадание 5\n");
-
-        /// TODO Problem 5
+        System.out.println("\n\nЗадание 5. Перестановка значений переменных\n");
 
         int x = 2, y = 5, c = 3;
         System.out.println("Начальные значения:" + " " + " x = " + x + "," + " y = " + y);
+
+
+        System.out.print("С помощью переменной 'c':");
         x += c;
         y -= c;
-        System.out.println("С помощью переменной 'c':" + " " + "x = " + x + "," + " " +
+
+        System.out.print("x = " + x  + "," + " " +
                 "y = " + y);
 
-        System.out.println ("С помощью арифмет., действий:" + " " + "x = " + (x - c) + "," + " " +
+
+        System.out.println ("\nС помощью арифмет., действий:" + " " + "x = " + (x - c) + "," + " " +
                 "y = " + (y + c));
-        // может быть я не совсем верно понял, как реализовать с помощью арифметических действий
-        //но если универсальность, то показалось с помощью действий над переменными.
-        x = x ^ y;
-        y = y ^ x;
-        x = x ^ y;
 
-        System.out.println("Побитовый способ:" + " x = " + x + "," + " " + "y = " + y);
+        System.out.print("Побитовый способ:");
+        x ^=  y;
+        y ^=  x;
+        x ^=  y;
 
-        // end Problem 5
+        System.out.print(" x = " + x + "," + " " + "y = " + y);
 
-        System.out.println("\n\nЗадание 6\n");
 
-        // TODO Problem 6
+        System.out.println("\n\nЗадание 6. Вывод символов и их кодов\n");
 
         char ch1 = 35;
         char ch2 = 38;
@@ -154,11 +131,7 @@ public class VariablesTheme {
         System.out.println( "35: " + ch1 + " " + "\n38: " + ch2 + " " + "\n64: " + ch3 + " " +
                 "\n94: " + ch4 + " " + "\n95: " + ch5);
 
-        // end Problem 6
-
-        System.out.println("\n\nЗадание 7\n");
-
-        // TODO Problem 7
+        System.out.println("\n\nЗадание 7. Вывод в консоль ASCII-арт Дюка\n");
 
         char sright = 47;
         char sleft = 92;
@@ -173,11 +146,7 @@ public class VariablesTheme {
         System.out.println(sright + "" + lineDown + "" + lineDown + "" + lineDown + "" + lineDown +
                 sright + sleft + lineDown + lineDown + sleft + " ");
 
-        // end Problem 7
-
-        System.out.println("\n\nЗадание 8\n");
-
-        //TODO Problem 8
+        System.out.println("\n\nЗадание 8. Вывод количества сотен, десятков и единиц числа\n");
 
         int number = 123;
         int units = number % 10;
@@ -185,15 +154,11 @@ public class VariablesTheme {
         int hundreds = number / 10 / 10;
         int sum = units + tens + hundreds;
         int mult = units * tens * hundreds;
-        System.out.println("Число " + number + " содержит:\n" + hundreds + " сотен\n" + tens + 
-            " десятков\n" + units + " единиц\n" + "Сумма его цифр = " + sum + "\nПроизведение = "
-             + mult);
+        System.out.println("Число " + number + " содержит:\n" + hundreds + " сотен\n" + tens +
+                " десятков\n" + units + " единиц\n" + "Сумма его цифр = " + sum + 
+                "\nПроизведение =" + mult);
 
-        // end Problem 8
-
-        System.out.println("\n\nЗадание 9\n");
-
-        //TODO Problem 9
+        System.out.println("\n\nЗадание 9. Вывод времени\n");
 
         int sumsec = 86399;
         int summin = sumsec / 60;
@@ -202,9 +167,8 @@ public class VariablesTheme {
         int min = summin % 60;
 
         System.out.println(hours + " : " + min + " : " + sec);
-
-        // end Problem 9
     }
 }
+
 
 
