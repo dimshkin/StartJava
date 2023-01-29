@@ -98,9 +98,9 @@ public class VariablesTheme {
         char char64 = '@';
         char char94 = '^';
         char char95 = '_';
-        System.out.println((int)char35 + " " + char35 + "\n" + (int)char38 + " " + char38 + "\n" 
-                + (int)char64 + " " + char64 + "\n" + (int)char94 + " " + char94 + "\n" + 
-                (int)char95 + " " + char95 + "\n");
+        System.out.println((int) char35 + " " + char35 + "\n" + (int) char38 + " " + char38 + "\n" 
+                + (int) char64 + " " + char64 + "\n" + (int) char94 + " " + char94 + "\n" + 
+                (int) char95 + " " + char95 + "\n");
 
         System.out.println("\nЗадание 7. Вывод в консоль ASCII-арт Дюка\n");
 
@@ -134,10 +134,10 @@ public class VariablesTheme {
         System.out.println("\nЗадание 9. Вывод времени\n");
 
         int totalSeconds = 86399;
-        int summin = totalSeconds / 60;
+        int sumΜinutes = totalSeconds / 60;
         int sec = totalSeconds % 60;
-        int hours = summin / 60;
-        int min = summin % 60;
+        int hours = sumΜinutes / 60;
+        int min = sumΜinutes % 60;
 
         System.out.println(hours + ":" + min + ":" + sec);
     }
