@@ -11,12 +11,10 @@ public class IfElseStatementTheme {
             System.out.println("Первая замена паспорта наступают только в 20 лет.");
         }
 
-
         if (!male) {
             System.out.println("Повезет в следующей жизни.");
         } else
             System.out.println("Повезло.");
-
 
         if (height < 1.80) {
             System.out.println("Ты помещаешься в стандартную кровать.");
@@ -59,10 +57,10 @@ public class IfElseStatementTheme {
         System.out.println("Число 1: " + num1 + "," + "Число 2: " + num2);
         int unitsNum1 = num1 % 10;
         int tenseNum1 = num1 / 10 % 10;
-        int hundredsNum1 = num1 / 10 / 10;
+        int hundredsNum1 = num1 / 100;
         int unitsNum2 = num2 % 10;
         int tenseNum2 = num2 / 10 % 10;
-        int hundredsNum2 = num2 / 10 / 10;
+        int hundredsNum2 = num2 / 100;
         if (unitsNum1 == unitsNum2) {
             System.out.println("Числа имеют одинаковую цифру " + unitsNum1 + " в первом разряде");
         }
@@ -117,7 +115,6 @@ public class IfElseStatementTheme {
         int codingPercent = 91;
         int midle = ((historyPercent + codingPercent)/2);
 
-
         if (historyPercent <=60) {
             System.out.println("История: оценка 2");
         }
@@ -130,7 +127,6 @@ public class IfElseStatementTheme {
         if(historyPercent >= 91) {
             System.out.println("История: оценка 5");
         }
-
         if (codingPercent <=60) {
             System.out.println("Программирование: оценка 2 ");
         }
@@ -165,12 +161,12 @@ public class IfElseStatementTheme {
 
         System.out.println("\n\nЗадание 9. Подсчет количества банкнот \n");
         int usd = 567;
-        int unitUsd = 567 % 10;
-        int tenseUsd = 567 / 10 % 10;
-        int hundredUsd = 567 / 10 / 10;
+        int unitUsd = usd % 10;
+        int tenseUsd = usd / 10 % 10;
+        int hundredUsd = usd / 100;
         int unitBanknotes = 50, tenseBanknotes = 1, hundredBanknotes = 5;
-        int hundredlacks = (tenseUsd + (hundredUsd - hundredBanknotes) * 10); //если не хватает сотен, то нужные нам 10-ки + из сотен делаем 10-ки
-        int tenselacks = (unitUsd + (hundredlacks - tenseBanknotes) * 10); // если не хватает десяток, то нужные нам единицы + из десяток делаем единицы
+        int hundredlacks = (tenseUsd + (hundredUsd - hundredBanknotes) * 10);
+        int tenselacks = (unitUsd + (hundredlacks - tenseBanknotes) * 10);
 
         if (hundredBanknotes >= hundredUsd && tenseBanknotes >= tenseUsd && unitBanknotes >= unitUsd) {
             System.out.println("Для снятия " + usd + " долларов " + "банкомат выдаст: " + 
