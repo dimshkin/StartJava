@@ -11,12 +11,10 @@ public class IfElseStatementTheme {
             System.out.println("Первая замена паспорта наступают только в 20 лет.");
         }
 
-
         if (!maleGender) {
             System.out.println("Повезет в следующей жизни.");
         } else
             System.out.println("Повезло.");
-
 
         if (height < 1.80) {
             System.out.println("Ты помещаешься в стандартную кровать.");
@@ -98,19 +96,21 @@ public class IfElseStatementTheme {
 
         System.out.println("\n\nЗадание 6. Подсчет суммы вклада и начисленных банком % \n");
         int deposit = 300_000;
+        int percent = 0;
+        int offer1 = (deposit * 5 / 100);
+        int offer2 = (deposit * 7 / 100);
+        int offer3 = (deposit * 10 / 100);
 
         if (deposit < 100_000) {
-            System.out.println("Ваш вклад в рублях: " + deposit + "." + " Начисленный процент в рублях за год " +
-                    (deposit * 5 / 100) + "." + " Итоговая сумма в рублях: " + (deposit + (deposit * 5 / 100)));
+            percent = offer1;
         } else if (deposit >= 100_000 && deposit <= 300_000) {
-            System.out.println("Ваш вклад в рублях: " + deposit + "." + " Начисленный процент в рублях за год " +
-                    (deposit * 7 / 100) + "." + " Итоговая сумма в рублях: " + (deposit + (deposit * 7 / 100)));
+            percent = offer2;
         } else if (deposit > 300_000) {
-            System.out.println("Ваш вклад в рублях: " + deposit + "." + " Начисленный процент в рублях за год " +
-                    (deposit * 10 / 100) + "." + " Итоговая сумма в рублях: " + (deposit + (deposit * 10 / 100)));
-        } else {
-            System.out.println("У вас еще нет банковского вклада в нашем банке");
+            percent = offer3;
         }
+            System.out.println("Ваш вклад в рублях: " + deposit + "." + 
+                " Начисленный процент в рублях за год " + percent + "." + 
+                " Итоговая сумма в рублях: " + (deposit + percent));
 
         System.out.println("\n\nЗадание 7. Определение оценки по предметам \n");
         int historyPercent = 59;
