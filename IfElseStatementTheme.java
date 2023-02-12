@@ -52,6 +52,7 @@ public class IfElseStatementTheme {
                 System.out.print(" четное");
             else
                 System.out.print(" нечетное");
+
             if (number > 0)
                 System.out.print(", положительное");
             else
@@ -70,16 +71,16 @@ public class IfElseStatementTheme {
 
         if (onesNum1 != onesNum2 && tenseNum1 != tenseNum2 && hundredsNum1 != hundredsNum2) {
             System.out.println("Совпадений не найдено!");
-        }
-        if (onesNum1 == onesNum2) {
-            System.out.println("Числа имеют одинаковую цифру " + onesNum1 + " в первом разряде");
-        }
-        if (tenseNum1 == tenseNum2) {
-            System.out.println("Числа имеют одинаковую цифру " + tenseNum1 + " во втором разряде");
-        }
-        if (hundredsNum1 == hundredsNum2) {
-            System.out.println("Числа имеют одинаковую цифру " + hundredsNum1 + 
-                " в третьем разряде");
+        } else {
+            if (onesNum1 == onesNum2) {
+                System.out.println("Числа имеют одинаковую цифру " + onesNum1 + " в первом разряде");
+            }
+            if (tenseNum1 == tenseNum2) {
+                System.out.println("Числа имеют одинаковую цифру " + tenseNum1 + " во втором разряде");
+            }
+            if (hundredsNum1 == hundredsNum2) {
+                System.out.println("Числа имеют одинаковую цифру " + hundredsNum1 + " в третьем разряде");
+            }
         }
 
         System.out.println("\n\nЗадание 5. Определение символа по его коду \n");
@@ -97,18 +98,16 @@ public class IfElseStatementTheme {
 
         System.out.println("\n\nЗадание 6. Подсчет суммы вклада и начисленных банком % \n");
         int deposit = 300_000;
-        int offer = 0;
-
-        if (deposit < 100_000) {
-            offer = deposit * 5 / 100;
-        } else if (deposit >= 100_000 && deposit <= 300_000) {
+        int offer = deposit * 5 / 100;
+        
+        if (deposit >= 100_000 && deposit <= 300_000) {
             offer = deposit * 7 / 100;
         } else if (deposit > 300_000) {
             offer = deposit * 10 / 100;
         }
         System.out.println("Ваш вклад в рублях: " + deposit + "." + 
-                " Начисленный процент в рублях за год " + offer + "." + " Итоговая сумма в рублях: "
-                 + (deposit + offer));
+                " Начисленный процент в рублях за год " + offer +
+                "." + " Итоговая сумма в рублях: " + (deposit + offer));
 
         System.out.println("\n\nЗадание 7. Определение оценки по предметам \n");
         int historyPercent = 59;
@@ -144,30 +143,35 @@ public class IfElseStatementTheme {
 
         System.out.println("\n\nЗадание 9. Подсчет количества банкнот \n");
         int usd = 567;
-        int unitUsd = usd % 10;
-        int tenseUsd = usd / 10 % 10;
+        int onesUsd = usd % 10;
+        int tensUsd = usd / 10 % 10;
         int hundredUsd = usd / 100;
-        int unitBanknotes = 50, tenseBanknotes = 1, hundredBanknotes = 5;
-        int hundredlacks = (tenseUsd + (hundredUsd - hundredBanknotes) * 10);
-        int tenselacks = (unitUsd + (hundredlacks - tenseBanknotes) * 10);
+        int onesBanknotes = 50;
+        int tensBanknotes = 5;
+        int hundredBanknotes = 5;
+        int hundredlacks = (tensUsd + (hundredUsd - hundredBanknotes) * 10);
+        int tenslacks = (onesUsd + (hundredlacks - tensBanknotes) * 10);
         int hundredNeed = hundredUsd;
-        int tenseNeed = tenseUsd;
-        int unitNeed = unitUsd;
+        int tensNeed = tensUsd;
+        int onesNeed = onesUsd;
 
-        if ((unitBanknotes + (tenseBanknotes * 10) + (hundredBanknotes * 100)) < usd) {
+        if ((onesBanknotes + (tensBanknotes * 10) + (hundredBanknotes * 100)) < usd) {
             System.out.println("В банкомате недостаточно купюр! ");
-        }
-         if (hundredBanknotes - hundredUsd > 0) {
-            hundredNeed = hundredUsd;
-        } else if (hundredBanknotes - hundredUsd < 0) {
-            hundredNeed = hundredBanknotes;
-            tenseNeed = hundredlacks;
-        } else if (tenseBanknotes - hundredlacks < 0) {
-            tenseNeed = tenseBanknotes;
-            unitNeed = tenselacks;
-        }
+        } else {
+            if (hundredBanknotes - hundredUsd > 0) {
+                hundredNeed = hundredUsd;
+            }
+            if (hundredBanknotes - hundredUsd < 0) {
+                hundredNeed = hundredBanknotes;
+                tensNeed = hundredlacks;
+            }
+            if (tensBanknotes - hundredlacks < 0) {
+                tensNeed = tensBanknotes;
+                onesNeed = tenslacks;
+            }
             System.out.println("Для снятия " + usd + " долларов, банкомат выдаст: " +
-                    hundredNeed + " банкнот по 100 usd, " + tenseNeed + " банкнот по 10 USD и "
-                    + unitNeed + " банкнот по 1 USD");
+                    hundredNeed + " банкнот по 100 usd, " + tensNeed + " банкнот по 10 USD и "
+                    + onesNeed + " банкнот по 1 USD");
+        }
     }
 }
