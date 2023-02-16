@@ -21,6 +21,7 @@ public class IfElseStatementTheme {
         } else {
             System.out.println("Проверь не свисают ли твои ноги с кровати.");
         }
+
         char firstLetterName = "Имя".charAt(0);
         if (firstLetterName == 'M') {
             System.out.println("Максим, возможно это твое имя.");
@@ -37,26 +38,27 @@ public class IfElseStatementTheme {
             System.out.println("Числа равны");
         } else if (b > a) {
             System.out.println(b + " Максимальное число " + a + " Минимальное число");
-        } else if (a > b) {
+        } else {
             System.out.println(a + " Максимальное число " + b + " Минимальное число");
         }
         
         System.out.println("\n\nЗадание 3. Проверка числа \n");
         int number = 2;
 
-        System.out.print("Исходное число: " + number);
         if (number == 0) {
-        }
-        if (number != 0) {
-            if ((number % 2) == 0)
-                System.out.print(" четное");
-            else
-                System.out.print(" нечетное");
-
-            if (number > 0)
-                System.out.print(", положительное");
-            else
-                System.out.print(", отрицательное");
+            System.out.print("Исходное число: " + number);
+        } else {
+            System.out.print("Исходное число: " + number);
+            if (number != 0) {
+                if ((number % 2) == 0)
+                    System.out.print(" четное");
+                else
+                    System.out.print(" нечетное");
+                if (number > 0)
+                    System.out.print(", положительное");
+                else
+                    System.out.print(", отрицательное");
+            }
         }
 
         System.out.println("\n\nЗадание 4. Поиск одинаковых цифр в числах \n");
@@ -120,12 +122,12 @@ public class IfElseStatementTheme {
         } else if ((historyPercent >= 73) && (historyPercent < 91)) {
             historyScore = 4;
         } else if (historyPercent >= 91) {
-            historyScore =5;
+            historyScore = 5;
         }
 
         if ((programmingPercent > 60) && (programmingPercent < 73)) {
             programmingScore = 3;
-        } else if ((programmingPercent >= 73) &&(programmingPercent < 91)) {
+        } else if ((programmingPercent >= 73) && (programmingPercent < 91)) {
             programmingScore = 4;
         } else if (programmingPercent >= 91) {
             programmingScore = 5;
@@ -146,28 +148,28 @@ public class IfElseStatementTheme {
         int onesUsd = usd % 10;
         int tensUsd = usd / 10 % 10;
         int hundredUsd = usd / 100;
-        int onesBanknotes = 50;
-        int tensBanknotes = 5;
-        int hundredBanknotes = 5;
-        int hundredlacks = (tensUsd + (hundredUsd - hundredBanknotes) * 10);
-        int tenslacks = (onesUsd + (hundredlacks - tensBanknotes) * 10);
+        int banknotes1 = 50;
+        int banknotes10 = 5;
+        int banknotes100 = 5;
+        int hundredLacks = (tensUsd + (hundredUsd - banknotes100) * 10);
+        int tensLacks = (onesUsd + (hundredLacks - banknotes10) * 10);
         int hundredNeed = hundredUsd;
         int tensNeed = tensUsd;
         int onesNeed = onesUsd;
 
-        if ((onesBanknotes + (tensBanknotes * 10) + (hundredBanknotes * 100)) < usd) {
+        if ((banknotes1 + (banknotes10 * 10) + (banknotes100 * 100)) < usd) {
             System.out.println("В банкомате недостаточно купюр! ");
         } else {
-            if (hundredBanknotes - hundredUsd > 0) {
+            if (banknotes100 - hundredUsd > 0) {
                 hundredNeed = hundredUsd;
             }
-            if (hundredBanknotes - hundredUsd < 0) {
-                hundredNeed = hundredBanknotes;
-                tensNeed = hundredlacks;
+            if (banknotes100 - hundredUsd < 0) {
+                hundredNeed = banknotes100;
+                tensNeed = hundredLacks;
             }
-            if (tensBanknotes - hundredlacks < 0) {
-                tensNeed = tensBanknotes;
-                onesNeed = tenslacks;
+            if (banknotes10 - hundredLacks < 0) {
+                tensNeed = banknotes10;
+                onesNeed = tensLacks;
             }
             System.out.println("Для снятия " + usd + " долларов, банкомат выдаст: " +
                     hundredNeed + " банкнот по 100 usd, " + tensNeed + " банкнот по 10 USD и "
