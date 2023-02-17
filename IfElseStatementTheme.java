@@ -45,9 +45,6 @@ public class IfElseStatementTheme {
         System.out.println("\n\nЗадание 3. Проверка числа \n");
         int number = 2;
 
-        if (number == 0) {
-            System.out.print("Исходное число: " + number);
-        } else {
             System.out.print("Исходное число: " + number);
             if (number != 0) {
                 if ((number % 2) == 0)
@@ -58,8 +55,9 @@ public class IfElseStatementTheme {
                     System.out.print(", положительное");
                 else
                     System.out.print(", отрицательное");
+            } else {
+                System.out.print("Исходное число " + number);
             }
-        }
 
         System.out.println("\n\nЗадание 4. Поиск одинаковых цифр в числах \n");
         int num1 = 321, num2 = 123;
@@ -141,7 +139,7 @@ public class IfElseStatementTheme {
         int turnoverMonth = 13_000;
         int purchaseGoods = 9_000;
         System.out.println(" Годовая прибыль составляет: " + 
-            (turnoverMonth - (rentMonth + purchaseGoods)) * 12);
+                (turnoverMonth - (rentMonth + purchaseGoods)) * 12);
 
         System.out.println("\n\nЗадание 9. Подсчет количества банкнот \n");
         int usd = 567;
@@ -173,7 +171,7 @@ public class IfElseStatementTheme {
             }
             System.out.println("Для снятия " + usd + " долларов, банкомат выдаст: " +
                     hundredNeed + " банкнот по 100 usd, " + tensNeed + " банкнот по 10 USD и "
-                    + onesNeed + " банкнот по 1 USD");
+                     + onesNeed + " банкнот по 1 USD");
         }
     }
 }
