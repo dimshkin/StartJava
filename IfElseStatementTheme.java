@@ -45,19 +45,19 @@ public class IfElseStatementTheme {
         System.out.println("\n\nЗадание 3. Проверка числа \n");
         int number = 2;
 
-            System.out.print("Исходное число: " + number);
-            if (number != 0) {
-                if ((number % 2) == 0)
-                    System.out.print(" четное");
-                else
-                    System.out.print(" нечетное");
-                if (number > 0)
-                    System.out.print(", положительное");
-                else
-                    System.out.print(", отрицательное");
-            } else {
-                System.out.print("Исходное число " + number);
-            }
+        System.out.print("Исходное число: " + number);
+        if (number != 0) {
+            if ((number % 2) == 0)
+                System.out.print(" четное");
+            else
+                System.out.print(" нечетное");
+            if (number > 0)
+                System.out.print(", положительное");
+            else
+                System.out.print(", отрицательное");
+        } else {
+            System.out.print("Исходное число " + number);
+        }
 
         System.out.println("\n\nЗадание 4. Поиск одинаковых цифр в числах \n");
         int num1 = 321, num2 = 123;
@@ -112,6 +112,7 @@ public class IfElseStatementTheme {
         System.out.println("\n\nЗадание 7. Определение оценки по предметам \n");
         int historyPercent = 59;
         int programmingPercent = 91;
+        int averagePercent = (historyPercent + programmingPercent) / 2;
         float programmingScore = 2;
         float historyScore = 2;
 
@@ -119,20 +120,20 @@ public class IfElseStatementTheme {
             historyScore = 3;
         } else if ((historyPercent >= 73) && (historyPercent < 91)) {
             historyScore = 4;
-        } else if (historyPercent >= 91) {
-            historyScore = 5;
+        } else if (historyPercent >= 91)   {
+            historyScore =5;
         }
 
         if ((programmingPercent > 60) && (programmingPercent < 73)) {
             programmingScore = 3;
-        } else if ((programmingPercent >= 73) && (programmingPercent < 91)) {
+        } else if ((programmingPercent >= 73) &&(programmingPercent < 91)){
             programmingScore = 4;
         } else if (programmingPercent >= 91) {
             programmingScore = 5;
         }
-        System.out.println("История: оценка " + historyScore + "\nПрограммирование: оценка "
-                 + programmingScore + 
-                 "\nСредняя оценка: " + ((historyScore + programmingScore) / 2));
+        System.out.println("История: оценка " + historyScore + "\nПрограммирование: оценка " + 
+                programmingScore + "\nСредняя оценка: " + ((historyScore + programmingScore) / 2) + 
+                "\nСредний процент: " + averagePercent);
 
         System.out.println("\n\nЗадание 8. Расчет прибыли за год \n");
         int rentMonth = 5_000;
